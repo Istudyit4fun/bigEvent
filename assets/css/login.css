@@ -1,0 +1,69 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: url('/assets/images/6.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.loginAndRegBox {
+    width: 400px;
+    height: 310px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title_box {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    /* 注意 在使用live server 的时候  路径设置十分重要 */
+    background: url('/assets/images/login_title.png') no-repeat center;
+    background-size: none;
+}
+
+.login_box #login {
+    display: block;
+    position: absolute;
+    font-weight: 600;
+    right: 10%;
+    margin-top: 15px;
+}
+
+.reg_box #reg {
+    display: block;
+    position: absolute;
+    right: 10%;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.login_box {
+    position: relative;
+    padding: 30px;
+}
+
+.reg_box {
+    position: relative;
+    padding: 10px 20px 10px 20px;
+    display: none;
+}
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-form-item .layui-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.layui-input {
+    padding-left: 30px !important;
+}
