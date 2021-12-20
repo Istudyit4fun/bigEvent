@@ -79,37 +79,36 @@ $(function() {
             }
         })
 
-        //登录 监听登录表单的提交事件
-        $("#form_login").submit(function(e) {
-            //阻止默认提交行为
-            e.preventDefault()
-            $.ajax({
-                method: "POST",
-                url: "/api/login",
-                //快速获取表单中的数据
-                data: $("#form_login").serialize(),
-                success: function(res) {
-
-                    //服务器端会提供 token   用于 有权限接口的身认证
-                    if (res.status != 0) {
-                        console.log(res);
-                        return layer.msg("失败！")
-                    }
-                    console.log("1111111");
-                    console.log(res.msg);
-                    layer.msg("登录成功~~")
-                    localStorage.setItem('token', res.token)
-                        // 利用localstorage  存储 token 字符串
-                    location.href = "/index.html"
-                        //跳转到后台主页
-
-                }
-
-            })
-        })
 
     })
 
+    //登录 监听登录表单的提交事件
+    $("#form_login").submit(function(e) {
+        //阻止默认提交行为
+        e.preventDefault()
+        $.ajax({
+            method: "POST",
+            url: "/api/login",
+            //快速获取表单中的数据
+            data: $("#form_login").serialize(),
+            success: function(res) {
 
+                //服务器端会提供 token   用于 有权限接口的身认证
+                if (res.status != 0) {
+                    console.log(res);
+                    return layer.msg("失败！")
+                }
+                console.log("1111111");
+                console.log(res.msg);
+                layer.msg("登录成功~~")
+                localStorage.setItem('token', res.token)
+                    // 利用localstorage  存储 token 字符串
+                location.href = "/index.html"
+                    //跳转到后台主页
+
+            }
+
+        })
+    })
 
 })
